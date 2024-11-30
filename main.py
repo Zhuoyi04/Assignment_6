@@ -3,6 +3,7 @@ from module_B import draw_distribution_graph
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
+
 file_path = '20231231.csv'
 
 subjects = get_subjects(file_path)
@@ -15,5 +16,5 @@ if choice < 0 or choice >= len(subjects):
     print("Invalid choice!")
 else:
     selected_subject = subjects[choice]
-    male_scores, female_scores = get_scores(file_path, selected_subject)
-    draw_distribution_graph(male_scores, female_scores, selected_subject)
+    scores, male_count, female_count = get_scores(file_path, selected_subject)
+    draw_distribution_graph(scores, male_count, female_count, selected_subject)
